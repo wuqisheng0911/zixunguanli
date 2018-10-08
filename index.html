@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+	<link rel="stylesheet" type="text/css" href="./css/iconfont1.css">
+	<link rel="stylesheet" href="css/iconFont/iconfont.css">
+	<link rel="stylesheet" href="./css/bootstrap-3.3.0-dist/css/bootstrap.min.css">
+	<script type="text/javascript" src="./js/jquery.min.js"></script>
+	<script type="text/javascript" src="./css/bootstrap-3.3.0-dist/js/bootstrap.min.js"></script>
+	<script src="./js/myjs.js"></script>
+	<script src="./js/tubiao.js"></script>
+	<script src="Highcharts-4.0.1/js/highcharts.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row one">
+			<div class="col-md-1"></div>
+			<div class="col-md-2 left_top_container">
+				<img src="./images/logo.png" alt="logo">
+				<span>看点资讯</span>
+			</div>
+			<div class="col-md-8 right_top_container">
+				<i class="iconfont icon-liebiao1"></i>
+				<i class="iconfont icon-laba"></i>
+				<span>4</span>
+				<div class="user-poto">
+					<img src="./images/touxiang.png" alt="touxiangs">
+					<span>乔美丽&gt;</span>
+				</div>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+		<div class="row two">
+			<div class="col-md-1"></div>
+			<div class="col-md-2 left_main_container">
+				<ul>
+					<li>
+						<a href="#">
+							<i class="iconfont icon-shouye marker_one"></i>
+							首页
+							<i class="iconfont icon-kuozhan marker_two"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="iconfont icon-liebiao1 marker_one"></i>
+							栏目管理
+							<i class="iconfont icon-kuozhan"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="iconfont icon-zixun marker_one"></i>
+							咨讯管理
+							<i class="iconfont icon-kuozhan"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="iconfont icon-ai-user user-icon marker_one"></i>
+							用户管理
+							<i class="iconfont icon-kuozhan"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- 首页主视图 -->
+			<div class="col-md-8 right_main_container">
+				<div class="top-main-one">
+					<ul class="three-mode">
+						<li>
+							<div class="mode1 mode">
+								<div class="icon-make">
+									<i class="iconfont icon-yun1"></i>
+								</div>
+								<div class="word">
+									<span>99.9%</span>
+									<span>SEVER UPTIME</span>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="mode2 mode">
+								<div class="icon-make">
+									<i class="iconfont icon-user bigfont"></i>
+								</div>
+								<div class="word">
+									<span>117K </span>
+									<span>USERS TOTAL</span>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="mode3 mode">
+								<div class="icon-make">
+									<i class="iconfont icon-18 bigfont"></i>
+								</div>
+								<div class="word">
+									<span>2,470 </span>
+									<span>SEVER UPTIME</span>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<!-- tubiao -->
+					<div class="line-mode" id="container"></div>
+					<!-- !!! -->
+					<ul class="two-mode">
+						<li><div class="right-mode1">1</div></li>
+						<li><div class="right-mode1">2</div></li>
+					</ul>
+				</div>
+				<div class="top-main-two">
+					<div class="col-md-6 tubiao2">
+						<div class="big-tubiao" id="container3"></div>
+						<div class="md-tubiao" id="container4"></div>
+						<div class="md-tubiao" id="container5"></div>
+						<div class="md-tubiao" id="container6"></div>
+					</div>
+					<div class="col-md-6 tubiao2">
+						<div class="md-tubiao2" id="container1"></div>
+						<div class="md-tubiao3" id="container2"></div>
+					</div>
+				</div>
+			</div>
+			<!-- 栏目管理 -->
+			<div class="col-md-8 right_main_container showIt">
+				<div class="lmgl">
+					<button class="btn btn-success newAdd" data-toggle="modal" data-target="#myModal">新增</button>
+					<button class="btn btn-success rm_some_column">批量删除</button>
+					<table class="table table-bordered table-condensed">
+						<thead>
+							<tr>
+								<th>编号</th>
+								<th>栏目名称</th>
+								<th>父栏目</th>
+								<th>描述</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody></tbody>
+					</table>
+					<!-- 添加栏目 -->
+					<!-- 模态框 -->
+					<div class="modal pos" id="myModal">
+						<div class="modal-dialog">
+							<div class="modal-content  add">
+								<div class="modal-header">
+									<a href="#" data-dismiss="modal">返回</a>
+									添加栏目
+								</div>
+								<div class="modal-body">
+									<input type="text" placeholder="id">
+									<br>
+									栏目名称
+									<br>
+									<input type="text">
+									<br>
+									父栏目
+									<br>
+									<select name="父栏目"></select>
+									<br>
+									描述
+									<br>
+									<textarea name="commit"></textarea>
+								</div>
+								<div class="modal-footer">
+									<button class="btn btn-success addColumn" data-dismiss="modal">确认</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 模态框结束 -->
+					<!-- 修改栏目 -->
+				</div>
+			</div>
+			<!-- 咨讯管理 -->
+			<div class="col-md-8 right_main_container showIt">
+				<div class="zxgl">
+					<button class="btn btn-success addZxgl" data-toggle="modal" data-target="#my2modal">新增</button>
+					<button class="btn btn-danger rm_zxgl_some">批量删除</button>
+					页码：<input type="text" placeholder="输入页码" size="5" class="page">
+					数量：<input type="text" placeholder="数量" size="5" class="pageSize">
+					<button class="btn btn-success btn-sm chaxun">查询</button>
+					<table class="table table-bordered table-condensed">
+						<thead>
+							<tr>
+								<th>编号</th>
+								<th>文章标题</th>
+								<th>所属栏目</th>
+								<th>背景音乐</th>
+								<th>作者</th>
+								<th>发布时间</th>
+								<th>阅读次数</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody></tbody>
+					</table>
+					<!-- 模态框 -->
+					<div class="modal pos2" id="my2modal">
+						<div class="modal-dialog">
+							<div class="modal-content size">
+								<div class="modal-header">
+									<a href="javascript:void(0)" data-dismiss="modal">返回</a>
+									发布资讯
+								</div>
+								<div class="modal-body">
+									<input type="text" placeholder="id">
+									<br>
+									<span>标题</span>
+									<br>
+									<input type="text">
+									<br>
+									<span>所属栏目</span>
+									<br>
+									<select></select>
+									<br>
+									<span>列表样式</span>
+									<br>
+									<div class="sty cheacked" name="liststyle-1">样式1</div>
+									<div class="sty" name="liststyle-2">样式2</div>
+									<br>
+									<span>列表缩略图</span>
+									<div class="push">点击上传</div>
+									<span>正文</span>
+									<br>
+									<textarea></textarea>
+								</div>
+								<div class="modal-footer">
+									<button class="btn btn-success publish" data-dismiss="modal">发布</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 用户管理 -->
+			<div class="col-md-8 right_main_container showIt">
+				<div class="yhgl">
+					<button class="btn btn-success" data-toggle="modal" data-target="#my3modal">新增</button>
+					<ul></ul>
+				</div>
+			</div>
+			<!-- 模态框 -->
+			<div class="modal pos3" id="my3modal">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<a href="javascript:void(0)" data-dismiss="modal">返回</a>
+							添加新用户
+						</div>
+						<div class="modal-body">
+							<span>username</span>
+							<br>
+							<input type="text">
+							<br>
+							<span>password</span>
+							<br>
+							<input type="text">
+							<br>
+							<span>inkename</span>
+							<br>
+							<input type="text">
+							<br>
+							<span>email</span>
+							<br>
+							<input type="text">
+							<br>
+							<span>上传头像</span>
+							<br>
+							<input type="text">
+							<!-- <form action="#">
+								<input type="file">
+							</form> -->
+						</div>
+						<div class="modal-footer">
+							<button class="btn btn-success addUser" data-dismiss="modal">确定</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+
+	</div>
+</body>
+</html>
